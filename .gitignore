@@ -1,0 +1,2 @@
+# ignore all CSVs in datasets/
+datasets/*.csv
