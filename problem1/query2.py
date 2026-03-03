@@ -5,6 +5,11 @@ return all people in MetaEvent-No-Disclosure who appear
 in Reported-Illnesses (i.e., they were sick).
 """
 
+import os, sys
+os.environ["PYSPARK_PYTHON"] = sys.executable
+os.environ["PYSPARK_DRIVER_PYTHON"] = sys.executable
+os.environ["HADOOP_HOME"] = "C:\\tools\\hadoop-3.2.2"
+
 from pyspark import SparkContext, SparkConf
 
 conf = SparkConf().setAppName("Query2ReportedSick").setMaster("local[*]")
@@ -12,8 +17,8 @@ sc   = SparkContext(conf=conf)
 sc.setLogLevel("WARN")
 
 # Load files
-no_disc_raw = sc.textFile("datasets/MetaEventNoDisclosure.csv")
-reported_raw = sc.textFile("datasets/ReportedIllnesses.csv")
+no_disc_raw = sc.textFile("../datasets/MetaEventNoDisclosure.csv")
+reported_raw = sc.textFile("../datasets/ReportedIllnesses.csv")
 
 # Parse No-Disclosure
 no_disc_header = no_disc_raw.first()

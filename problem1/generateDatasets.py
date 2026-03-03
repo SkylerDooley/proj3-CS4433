@@ -2,11 +2,9 @@ import csv
 import os
 import random
 
-# ─────────────────────────────────────────────
 # Parameters
-# ─────────────────────────────────────────────
-NUM_PEOPLE    = 500_000
-NUM_TABLES    = 1_000
+NUM_PEOPLE    = 5_000
+NUM_TABLES    = 100
 SICK_FRACTION = 0.05
 OUTPUT_DIR    = "datasets"
 SEED          = 42

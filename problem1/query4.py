@@ -6,6 +6,11 @@ For each table in MetaEvent, return:
            "concern" if at least one is sick
 """
 
+import os, sys
+os.environ["PYSPARK_PYTHON"] = sys.executable
+os.environ["PYSPARK_DRIVER_PYTHON"] = sys.executable
+os.environ["HADOOP_HOME"] = "C:\\tools\\hadoop-3.2.2"
+
 from pyspark import SparkContext, SparkConf
 
 conf = SparkConf().setAppName("Query4TableStatus").setMaster("local[*]")
@@ -13,7 +18,7 @@ sc   = SparkContext(conf=conf)
 sc.setLogLevel("WARN")
 
 # Load MetaEvent
-raw_rdd = sc.textFile("datasets/MetaEvent.csv")
+raw_rdd = sc.textFile("../datasets/MetaEvent.csv")
 
 header = raw_rdd.first()
 
