@@ -6,7 +6,7 @@ import string
 # ─────────────────────────────────────────────
 # Parameters
 # ─────────────────────────────────────────────
-NUM_CUSTOMERS  = 50_000
+NUM_CUSTOMERS  = 50_000 # changed to 5k so we can actually run stuff :))
 NUM_PURCHASES  = 5_000_000
 OUTPUT_DIR     = "datasets"
 SEED           = 42
