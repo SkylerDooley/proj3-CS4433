@@ -1,7 +1,7 @@
 """
 Problem 2 - Query 1
 Filter out purchases with TransTotal > 100
-Store the result as Q1.csv
+Store the result as T1.csv
 """
 
 from pyspark.sql import SparkSession

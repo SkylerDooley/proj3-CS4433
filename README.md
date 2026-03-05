@@ -1,4 +1,13 @@
-# proj3-CS4433
+# CS 4433 Big Data Management: Project 3
+## By: Skyler Dooley & Alessandra (Ally) Giovenco
 
-By: Skyler Dooley & Alessandra (Ally) Giovenco
+
+### Guide / Execution Instructions
+To run this project, Python and PySpark must be installed. The required libraries are pyspark, csv, and the standard Python modules used in the scripts. PySpark can be installed with `pip install pyspark`. The code also requires a Java runtime (JDK 8 or later) and a Hadoop directory for Windows users; the scripts set the necessary environment variables (PYSPARK_PYTHON, PYSPARK_DRIVER_PYTHON, and HADOOP_HOME) so Spark can start correctly. Once PySpark is installed and Java is available, all scripts can be executed directly with Python.
+
+Before running any queries, the datasets must be generated. For Problem 1, the dataset generator is located in problem1/generateDatasets.py. Running this script with `python generateDatasets.py` creates the three required files: MetaEvent.csv, MetaEventNoDisclosure.csv, and ReportedIllnesses.csv. These files are written into the datasets/ directory and are used by all five Problem 1 queries. After the datasets are created, each query script (query1.py through query5.py) can be run individually using `python queryX.py` inside the Problem 1 directory. Each script initializes PySpark, loads the appropriate CSV files, performs the required RDD transformations, and prints the results to the console.
+
+For Problem 2, the dataset generator is located in problem2/generateDatasets.py. Running `python generateDatasets.py` produces the Customers.csv and Purchases.csv files. These files are also written into the shared datasets/ directory. After the datasets are created, each query script (query1.py through query5.py) can be run individually using `python queryX.py` inside the Problem 2 directory. Query 1 automatically writes the filtered output to T1.csv, which is required by Queries 2–4. Query 3 writes its grouped results to T3.csv. All other queries print their results directly to the console.
+
+For the optional Bonus Problem 3, the MLlib script can be run after the Customers and Purchases datasets have been generated. The code is contained in a standalone file (problem3.py) inside the Problem 3 directory. To execute it, run `python problem3.py` from the command line inside the Problem 3 directory. The script initializes Spark, loads the datasets, assembles the machine‑learning features, performs an 80/20 train‑test split, trains a regression model to predict purchase totals, and prints the evaluation metrics (RMSE and MAE) directly to the console. No additional setup is required beyond installing PySpark and generating the datasets.
 
